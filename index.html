@@ -3,84 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Website</title>
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body Style */
-        body {
-            background-color: #000;
-            color: #FFD700;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        /* Title Style */
-        h1 {
-            margin: 20px;
-            font-size: 2.5em;
-            color: #FFD700;
-        }
-
-        /* Game Grid Container */
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 900px;
-            margin-top: 20px;
-        }
-
-        /* Game Button Style */
-        .game-button {
-            background-color: #FFD700;
-            color: #000;
-            font-size: 1.2em;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        /* Hover Effect for Buttons */
-        .game-button:hover {
-            background-color: #FFA500;
-        }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Devin's Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Devin's Game Website</h1>
+    </header>
 
-    <!-- Website Title -->
-    <h1>Your Game Website Title</h1>
+    <main>
+        <div class="game-grid">
+            <!-- Game boxes with placeholder links and titles -->
+            <a href="" class="game-box">
+                <div class="game-box-content">
+                    <h3>Game 1</h3>
+                </div>
+            </a>
+            <a href="" class="game-box">
+                <div class="game-box-content">
+                    <h3>Game 2</h3>
+                </div>
+            </a>
+            <a href="" class="game-box">
+                <div class="game-box-content">
+                    <h3>Game 3</h3>
+                </div>
+            </a>
+            <!-- Continue adding as many as you need (5 rows, 3 per row) -->
+            <!-- ... -->
+            <a href="" class="game-box">
+                <div class="game-box-content">
+                    <h3>Game 15</h3>
+                </div>
+            </a>
+        </div>
+    </main>
 
-    <!-- Game Grid -->
-    <div class="game-grid">
-        <!-- Game Buttons -->
-        <a href="#" class="game-button">Game 1</a>
-        <a href="#" class="game-button">Game 2</a>
-        <a href="#" class="game-button">Game 3</a>
-        <a href="#" class="game-button">Game 4</a>
-        <a href="#" class="game-button">Game 5</a>
-        <a href="#" class="game-button">Game 6</a>
-        <a href="#" class="game-button">Game 7</a>
-        <a href="#" class="game-button">Game 8</a>
-        <a href="#" class="game-button">Game 9</a>
-        <a href="#" class="game-button">Game 10</a>
-        <a href="#" class="game-button">Game 11</a>
-        <a href="#" class="game-button">Game 12</a>
-        <a href="#" class="game-button">Game 13</a>
-        <a href="#" class="game-button">Game 14</a>
-        <a href="#" class="game-button">Game 15</a>
-    </div>
-
+    <footer>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Free money</a>
+    </footer>
 </body>
 </html>
