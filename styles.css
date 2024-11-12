@@ -1,6 +1,6 @@
 /* General body styling */
 body {
-    background-color: #000000; /* Black background */
+    background-color: #0a0a0a; /* Slightly lighter black */
     color: #e0e0e0; /* Light gray for text */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -12,7 +12,7 @@ body {
 
 /* Header styling */
 header {
-    background-color: #333333; /* Dark gray header */
+    background-color: #1a1a1a; /* Dark gray header */
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -36,7 +36,7 @@ header h1 {
 
 /* Game box styling */
 .game-box {
-    background-color: #222222; /* Dark gray for game boxes */
+    background-color: #1a1a1a; /* Dark gray for game boxes */
     padding: 30px;
     border-radius: 12px;
     text-align: center;
@@ -50,13 +50,13 @@ header h1 {
 }
 
 .game-box:hover {
-    background-color: #333333; /* Slightly lighter gray on hover */
+    background-color: #2a2a2a; /* Slightly lighter gray on hover */
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 .game-box:active {
-    background-color: #444444; /* Lighter gray when clicked */
+    background-color: #333333; /* Lighter gray when clicked */
     transform: scale(0.98);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
@@ -69,7 +69,7 @@ header h1 {
 
 /* Footer styling */
 footer {
-    background-color: #333333; /* Matches header for consistency */
+    background-color: #1a1a1a; /* Matches header for consistency */
     padding: 10px;
     text-align: right;
     margin-top: auto;
