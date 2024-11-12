@@ -1,7 +1,7 @@
 /* General body styling */
 body {
-    background-color: #3b3b3b; /* Dark gray */
-    color: #f0f0f0; /* Light gray for text */
+    background-color: #2a2a2a; /* Darker gray */
+    color: #e0e0e0; /* Slightly lighter gray for text */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
 
 /* Header styling */
 header {
-    background-color: #525252; /* Medium-dark gray */
+    background-color: #404040; /* Darker medium-gray */
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -36,7 +36,7 @@ header h1 {
 
 /* Game box styling */
 .game-box {
-    background-color: #4d4d4d; /* Dark gray for game boxes */
+    background-color: #333333; /* Darker gray for game boxes */
     padding: 30px;
     border-radius: 12px;
     text-align: center;
@@ -50,13 +50,13 @@ header h1 {
 }
 
 .game-box:hover {
-    background-color: #5a5a5a; /* Slightly lighter gray on hover */
+    background-color: #444444; /* Slightly lighter gray on hover */
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 .game-box:active {
-    background-color: #666; /* A bit lighter when clicked */
+    background-color: #555555; /* A bit lighter when clicked */
     transform: scale(0.98);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
@@ -69,7 +69,7 @@ header h1 {
 
 /* Footer styling */
 footer {
-    background-color: #525252; /* Matching the header's gray */
+    background-color: #404040; /* Matching the header's gray */
     padding: 10px;
     text-align: right;
     margin-top: auto;
