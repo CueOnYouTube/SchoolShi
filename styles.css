@@ -1,0 +1,63 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    background-color: #000;
+    color: #FFD700;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header Title */
+header h1 {
+    margin: 20px;
+    font-size: 2.5em;
+    color: #FFD700;
+    text-align: center;
+}
+
+/* Game Grid Style */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+/* Game Box Styling */
+.game-box {
+    background-color: #FFD700;
+    color: #000;
+    font-size: 1.2em;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Game Box Hover Effect */
+.game-box:hover {
+    background-color: #FFA500;
+}
+
+/* Footer Link */
+footer a {
+    color: #FFD700;
+    margin-top: 20px;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
