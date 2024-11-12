@@ -1,7 +1,7 @@
 /* General body styling */
 body {
-    background-color: #1e1e1e;
-    color: white;
+    background-color: #2e2e2e; /* Lighter dark gray */
+    color: #f5f5f5; /* Light gray for text */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
 
 /* Header styling */
 header {
-    background-color: #333;
+    background-color: #444;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -21,7 +21,7 @@ header {
 header h1 {
     font-size: 40px;
     margin: 0;
-    color: #ffcc00;
+    color: #ffd700; /* Bright gold color */
 }
 
 /* Game grid container */
@@ -36,7 +36,7 @@ header h1 {
 
 /* Game box styling */
 .game-box {
-    background-color: #333;
+    background-color: #555;
     padding: 30px;
     border-radius: 12px;
     text-align: center;
@@ -50,13 +50,13 @@ header h1 {
 }
 
 .game-box:hover {
-    background-color: #444;
+    background-color: #666;
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 .game-box:active {
-    background-color: #555;
+    background-color: #777;
     transform: scale(0.98);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
@@ -64,187 +64,23 @@ header h1 {
 .game-box-content h3 {
     font-size: 24px;
     margin: 0;
-    color: #ffcc00;
+    color: #ffd700; /* Gold color for game names */
 }
 
-/* Calculator styling */
-.calculator {
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 10px;
-    text-align: center;
-}
-
-#calc-display {
-    width: 100%;
-    height: 60px;
-    background-color: #222;
-    border: none;
-    color: #fff;
-    font-size: 32px;
-    text-align: right;
-    padding-right: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
-}
-
-.calc-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.calc-btn {
-    background-color: #444;
-    color: white;
-    padding: 20px;
-    font-size: 24px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.calc-btn:hover {
-    background-color: #555;
-}
-
-.calc-btn:active {
-    background-color: #666;
-}
-
-/* Footer text (Free Money link) */
+/* Footer styling */
 footer {
-    background-color: #333;
+    background-color: #444;
     padding: 10px;
     text-align: right;
     margin-top: auto;
 }
 
 footer a {
-    color: #ffcc00;
+    color: #ffd700;
     text-decoration: none;
     font-size: 16px;
 }
 
 footer a:hover {
     text-decoration: underline;
-}
-
-/* Ask Me Anything styling */
-.ai-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 10px;
-    text-align: center;
-}
-
-#question {
-    width: 100%;
-    height: 150px;
-    background-color: #222;
-    border: 1px solid #444;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    resize: vertical;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
-}
-
-#ask-button {
-    background-color: #ffcc00;
-    color: #333;
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#ask-button:hover {
-    background-color: #e6b800;
-}
-
-#ask-button:active {
-    background-color: #cc9900;
-}
-
-#answer-container {
-    margin-top: 20px;
-}
-
-#answer-container h3 {
-    font-size: 22px;
-    color: #ffcc00;
-}
-
-#answer {
-    font-size: 18px;
-    color: #ddd;
-}
-
-/* Dictionary styling */
-.dictionary-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 10px;
-    text-align: center;
-}
-
-#search-input {
-    width: calc(100% - 40px);
-    height: 50px;
-    background-color: #222;
-    border: 1px solid #444;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
-}
-
-#search-button {
-    background-color: #ffcc00;
-    color: #333;
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#search-button:hover {
-    background-color: #e6b800;
-}
-
-#search-button:active {
-    background-color: #cc9900;
-}
-
-#definition-container {
-    margin-top: 20px;
-}
-
-#definition-container h3 {
-    font-size: 22px;
-    color: #ffcc00;
-}
-
-#definition {
-    font-size: 18px;
-    color: #ddd;
 }
