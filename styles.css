@@ -1,7 +1,7 @@
 /* General body styling */
 body {
-    background-color: #2a2a2a; /* Darker gray */
-    color: #e0e0e0; /* Slightly lighter gray for text */
+    background-color: #232b2b; /* Darker gray */
+    color: #e0e0e0; /* Light gray for text */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
 
 /* Header styling */
 header {
-    background-color: #404040; /* Darker medium-gray */
+    background-color: #404040; /* Medium-dark gray for contrast */
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -36,7 +36,7 @@ header h1 {
 
 /* Game box styling */
 .game-box {
-    background-color: #333333; /* Darker gray for game boxes */
+    background-color: #333333; /* Dark gray for game boxes */
     padding: 30px;
     border-radius: 12px;
     text-align: center;
@@ -56,7 +56,7 @@ header h1 {
 }
 
 .game-box:active {
-    background-color: #555555; /* A bit lighter when clicked */
+    background-color: #555555; /* Lighter gray when clicked */
     transform: scale(0.98);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
@@ -69,7 +69,7 @@ header h1 {
 
 /* Footer styling */
 footer {
-    background-color: #404040; /* Matching the header's gray */
+    background-color: #404040; /* Matches header for consistency */
     padding: 10px;
     text-align: right;
     margin-top: auto;
