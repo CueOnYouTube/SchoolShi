@@ -6,15 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Devin's Website</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Include particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
+    <!-- Particles.js background container -->
+    <div id="particles-js"></div>
+
     <header>
         <h1>Hi Seth Coffey</h1>
     </header>
 
     <main>
         <div class="game-grid">
-            <!-- Placeholder for game boxes -->
+            <!-- Game boxes -->
             <a href="Games/Basketballlegends/index.html" class="game-box">
                 <div class="game-box-content">
                     <h3>BasketBall Legends</h3>
@@ -45,42 +50,109 @@
                     <h3>Among Us IO</h3>
                 </div>
             </a>
-            <a href="" class="game-box">
+            <a href="#" class="game-box">
                 <div class="game-box-content">
                     <h3>Game 7</h3>
                 </div>
             </a>
-            <a href="" class="game-box">
+            <a href="#" class="game-box">
                 <div class="game-box-content">
                     <h3>Game 8</h3>
                 </div>
             </a>
-            <a href="" class="game-box">
+            <a href="#" class="game-box">
                 <div class="game-box-content">
                     <h3>Game 9</h3>
                 </div>
             </a>
-            <a href="" class="game-box">
+            <a href="#" class="game-box">
                 <div class="game-box-content">
                     <h3>Game 10</h3>
                 </div>
             </a>
-            <a href="" class="game-box">
+            <a href="#" class="game-box">
                 <div class="game-box-content">
                     <h3>Game 11</h3>
                 </div>
             </a>
-            <a href="" class="game-box">
+            <a href="#" class="game-box">
                 <div class="game-box-content">
                     <h3>Game 12</h3>
                 </div>
             </a>
-            <!-- Add more game boxes as needed (total 5 rows, 3 per row) -->
         </div>
     </main>
 
     <footer>
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Free money</a>
     </footer>
+
+    <!-- Initialize particles.js -->
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 60,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffd700" /* Gold color for particles */
+                },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                },
+                "modes": {
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
 </html>
