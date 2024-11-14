@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>2048</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .game-iframe {
+            width: 100vw; /* Full width */
+            height: 100vh; /* Full height */
+            border: none;
+        }
+        h1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #333;
+            z-index: 10; /* Ensure title is above the iframe */
+        }
+        .fullscreen-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 10; /* Ensure button is above the iframe */
+        }
+        .fullscreen-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>2048</h1>
+    <button class="fullscreen-btn" onclick="openFullscreen()">Fullscreen</button>
+    <div class="game-container">
+        <iframe class="game-iframe" src="https://edumaths.github.io/s5/2048" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function openFullscreen() {
+            const elem = document.documentElement; // Get the documentElement (html)
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
