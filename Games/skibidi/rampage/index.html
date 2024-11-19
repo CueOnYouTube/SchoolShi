@@ -11,7 +11,6 @@
             overflow: hidden; /* Prevent scrollbars */
         }
         .game-container {
-            text-align: center;
             position: relative;
             height: 100vh; /* Full height */
             width: 100vw; /* Full width */
@@ -50,15 +49,13 @@
 <body>
     <div class="game-container">
         <h1>Skibidi Toilet Rampage</h1>
-        <div class="game-player">
-            <iframe class="game-iframe" src="https://unblocked-games911.github.io/skibidi-toilet-rampage/" allowfullscreen></iframe>
-        </div>
+        <iframe class="game-iframe" src="https://unblocked-games911.github.io/skibidi-toilet-rampage/" allowfullscreen></iframe>
         <button class="fullscreen-button" onclick="toggleFullscreen()">Go Fullscreen</button>
     </div>
 
     <script>
         function toggleFullscreen() {
-            const elem = document.querySelector('.game-container');
+            const elem = document.documentElement; // Use the whole document for fullscreen
             if (elem.requestFullscreen) {
                 elem.requestFullscreen();
             } else if (elem.mozRequestFullScreen) { // Firefox
