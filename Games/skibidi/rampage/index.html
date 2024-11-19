@@ -6,24 +6,44 @@
     <title>Skibidi Toilet Rampage</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             margin: 0;
             background-color: #f8f9fa;
+            overflow: hidden; /* Prevent scrollbars */
         }
         .game-container {
             text-align: center;
+            position: relative;
+            height: 100vh; /* Full height */
+            width: 100vw; /* Full width */
         }
         .game-iframe {
-            width: 560px;
-            height: 315px;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
             border: none;
         }
         h1 {
-            margin-bottom: 20px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10; /* Ensure title is above the iframe */
+            color: #333; /* Title color */
+        }
+        .fullscreen-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 10; /* Ensure button is above the iframe */
+        }
+        .fullscreen-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
         }
     </style>
 </head>
@@ -33,6 +53,22 @@
         <div class="game-player">
             <iframe class="game-iframe" src="https://unblocked-games911.github.io/skibidi-toilet-rampage/" allowfullscreen></iframe>
         </div>
+        <button class="fullscreen-button" onclick="toggleFullscreen()">Go Fullscreen</button>
     </div>
+
+    <script>
+        function toggleFullscreen() {
+            const elem = document.querySelector('.game-container');
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+        }
+    </script>
 </body>
 </html>
