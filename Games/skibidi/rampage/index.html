@@ -1,69 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skibidi Toilet Rampage</title>
-    <style>
-        body {
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>SKIBIDI TOILET RAMPAGE | Play on Classroom 6x Unblocked Games &amp; Ad-Free!</title>
+    <style type="text/css">
+        body, html {
             margin: 0;
-            background-color: #f8f9fa;
-            overflow: hidden; /* Prevent scrollbars */
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
         }
         .game-container {
-            position: relative;
-            height: 100vh; /* Full height */
-            width: 100vw; /* Full width */
+            width: 100%;
+            height: 100%;
+            position: relative; /* For positioning the button */
         }
         .game-iframe {
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            border: none;
+            width: 100%;
+            height: 100%;
+            border: none; /* Remove border */
         }
-        h1 {
+        .fullscreen-btn {
             position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10; /* Ensure title is above the iframe */
-            color: #333; /* Title color */
-        }
-        .fullscreen-button {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px 20px;
-            background-color: #007bff;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
-            border-radius: 5px;
+            padding: 10px;
             cursor: pointer;
-            z-index: 10; /* Ensure button is above the iframe */
-        }
-        .fullscreen-button:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+            z-index: 100; /* Make sure the button is above everything */
         }
     </style>
 </head>
 <body>
     <div class="game-container">
-        <h1>Skibidi Toilet Rampage</h1>
-        <iframe class="game-iframe" src="https://unblocked-games911.github.io/skibidi-toilet-rampage/" allowfullscreen></iframe>
-        <button class="fullscreen-button" onclick="toggleFullscreen()">Go Fullscreen</button>
+        <iframe allowfullscreen="" class="game-iframe" id="game-area" src="https://unblocked-games911.github.io/skibidi-toilet-rampage/"></iframe>
+        <button class="fullscreen-btn" onclick="open_fullscreen()">Fullscreen</button>
     </div>
 
     <script>
-        function toggleFullscreen() {
-            const elem = document.documentElement; // Use the whole document for fullscreen
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) { // Firefox
-                elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { // IE/Edge
-                elem.msRequestFullscreen();
+        // Function to toggle fullscreen
+        function open_fullscreen() {
+            const gameArea = document.getElementById('game-area');
+            if (gameArea.requestFullscreen) {
+                gameArea.requestFullscreen();
+            } else if (gameArea.mozRequestFullScreen) { // Firefox
+                gameArea.mozRequestFullScreen();
+            } else if (gameArea.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                gameArea.webkitRequestFullscreen();
+            } else if (gameArea.msRequestFullscreen) { // IE/Edge
+                gameArea.msRequestFullscreen();
             }
         }
     </script>
