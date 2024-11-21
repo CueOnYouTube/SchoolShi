@@ -1,38 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skibidi Shooter</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>SKIBIDI SHOOTER | Play on Classroom 6x Unblocked Games &amp; Ad-Free!</title>
+    <link href="https://bitlifeonlineunblocked.github.io/content/themes/yaw/style/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+        body, html {
             margin: 0;
-            background-color: #f8f9fa;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
         }
         .game-container {
-            text-align: center;
+            width: 100%;
+            height: 100%;
         }
         .game-iframe {
-            width: 560px;
-            height: 315px;
-            border: none;
-        }
-        h1 {
-            margin-bottom: 20px;
+            width: 100%;
+            height: 100%;
+            border: none; /* Remove border */
         }
     </style>
 </head>
 <body>
     <div class="game-container">
-        <h1>Skibidi Shooter</h1>
-        <div class="game-player">
-            <iframe class="game-iframe" src="https://edumaths.github.io/s99/skibidi-shooter" allowfullscreen></iframe>
-        </div>
+        <iframe allowfullscreen="" class="game-iframe" id="game-area" src="https://edumaths.github.io/s99/skibidi-shooter"></iframe>
     </div>
+
+    <script>
+        // Function to toggle fullscreen
+        function open_fullscreen() {
+            const gameArea = document.getElementById('game-area');
+            if (gameArea.requestFullscreen) {
+                gameArea.requestFullscreen();
+            } else if (gameArea.mozRequestFullScreen) { // Firefox
+                gameArea.mozRequestFullScreen();
+            } else if (gameArea.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                gameArea.webkitRequestFullscreen();
+            } else if (gameArea.msRequestFullscreen) { // IE/Edge
+                gameArea.msRequestFullscreen();
+            }
+        }
+
+        // Optional: Call this function to enter fullscreen on load
+        // open_fullscreen();
+    </script>
 </body>
 </html>
