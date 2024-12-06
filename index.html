@@ -13,7 +13,7 @@
     
     <header>
         <h1>Massive Improvements🛠️</h1>
-        <button id="login-button" class="oauth-login">Login with GitHub</button>
+        <button id="login-button" class="oauth-login">Login with Google</button>
     </header>
 
     <main>
@@ -93,7 +93,6 @@
                     <h3>Test</h3>
                 </div>
             </a>
-            <!-- Additional game boxes can be added here -->
         </div>
     </main>
 
@@ -101,11 +100,24 @@
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Free money</a>
     </footer>
 
-    <!-- Particles.js and AOS scripts -->
+    <!-- Particles.js, AOS, and Appwrite scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/appwrite"></script>
     <script src="particles-config.js"></script>
     <script>
+        // Initialize Appwrite SDK
+        const sdk = new Appwrite.Client();
+        sdk.setEndpoint('https://[YOUR_APPWRITE_ENDPOINT]/v1') // Replace with your Appwrite endpoint
+           .setProject('[YOUR_PROJECT_ID]'); // Replace with your Appwrite project ID
+
+        const account = new Appwrite.Account(sdk);
+
+        // OAuth2 Google Login
+        document.getElementById('login-button').addEventListener('click', () => {
+            account.createOAuth2Session('google', '[YOUR_SUCCESS_URL]', '[YOUR_FAILURE_URL]');
+        });
+
         AOS.init();
     </script>
 </body>
