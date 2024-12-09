@@ -12,13 +12,15 @@
     <div id="particles-js"></div>
     
     <header>
-        <h1>Massive Improvements🛠️</h1>
-        <button id="login-button" class="oauth-login">Login with Google</button>
+        <h1>Massive Improvements 🛠️</h1>
+        <div id="user-info">
+            <button id="login-button" class="oauth-login">Login with Google</button>
+            <button id="logout-button" class="oauth-login" style="display: none;">Logout</button>
+        </div>
     </header>
 
     <main>
         <div class="game-grid">
-            <!-- Game links -->
             <a href="Games/Basketballlegends/index.html" class="game-box" data-aos="fade-up">
                 <div class="game-box-content">
                     <h3>BasketBall Legends</h3>
@@ -79,6 +81,21 @@
                     <h3>Test</h3>
                 </div>
             </a>
+            <a href="" class="game-box" data-aos="fade-up" data-aos-delay="500">
+                <div class="game-box-content">
+                    <h3>Test</h3>
+                </div>
+            </a>
+            <a href="" class="game-box" data-aos="fade-up" data-aos-delay="500">
+                <div class="game-box-content">
+                    <h3>Test</h3>
+                </div>
+            </a>
+            <a href="" class="game-box" data-aos="fade-up" data-aos-delay="500">
+                <div class="game-box-content">
+                    <h3>Test</h3>
+                </div>
+            </a>
         </div>
     </main>
 
@@ -99,10 +116,48 @@
 
         const account = new Appwrite.Account(sdk);
 
-        // OAuth2 Google Login
-        document.getElementById('login-button').addEventListener('click', () => {
-            account.createOAuth2Session('google', 'https://cueonyoutube.github.io/SchoolShi/', 'https://cueonyoutube.github.io/SchoolShi/');
+        const loginButton = document.getElementById('login-button');
+        const logoutButton = document.getElementById('logout-button');
+
+        // Check if user is logged in
+        function checkLoginStatus() {
+            account.get().then(
+                (response) => {
+                    // User is logged in
+                    loginButton.style.display = 'none';
+                    logoutButton.style.display = 'block';
+                    document.getElementById('user-info').innerHTML = `
+                        <p>Welcome, ${response.name}!</p>
+                        <button id="logout-button" class="oauth-login">Logout</button>
+                    `;
+                },
+                (error) => {
+                    // User is logged out
+                    loginButton.style.display = 'block';
+                    logoutButton.style.display = 'none';
+                }
+            );
+        }
+
+        // Login with Google OAuth2
+        loginButton.addEventListener('click', () => {
+            account.createOAuth2Session('google');
         });
+
+        // Logout
+        logoutButton.addEventListener('click', () => {
+            account.deleteSession('current').then(
+                () => {
+                    checkLoginStatus();
+                },
+                (error) => {
+                    console.error('Logout failed:', error);
+                }
+            );
+        });
+
+        // Check login status on page load
+        checkLoginStatus();
 
         AOS.init();
     </script>
