@@ -18,6 +18,7 @@
 
     <main>
         <div class="game-grid">
+            <!-- Game links -->
             <a href="Games/Basketballlegends/index.html" class="game-box" data-aos="fade-up">
                 <div class="game-box-content">
                     <h3>BasketBall Legends</h3>
@@ -78,21 +79,6 @@
                     <h3>Test</h3>
                 </div>
             </a>
-            <a href="" class="game-box" data-aos="fade-up" data-aos-delay="500">
-                <div class="game-box-content">
-                    <h3>Test</h3>
-                </div>
-            </a>
-            <a href="" class="game-box" data-aos="fade-up" data-aos-delay="500">
-                <div class="game-box-content">
-                    <h3>Test</h3>
-                </div>
-            </a>
-            <a href="" class="game-box" data-aos="fade-up" data-aos-delay="500">
-                <div class="game-box-content">
-                    <h3>Test</h3>
-                </div>
-            </a>
         </div>
     </main>
 
@@ -108,14 +94,14 @@
     <script>
         // Initialize Appwrite SDK
         const sdk = new Appwrite.Client();
-        sdk.setEndpoint('https://[YOUR_APPWRITE_ENDPOINT]/v1') // Replace with your Appwrite endpoint
-           .setProject('[YOUR_PROJECT_ID]'); // Replace with your Appwrite project ID
+        sdk.setEndpoint('https://cloud.appwrite.io/v1') // Appwrite endpoint
+           .setProject('6753569d001c33de4e0f'); // Project ID
 
         const account = new Appwrite.Account(sdk);
 
         // OAuth2 Google Login
         document.getElementById('login-button').addEventListener('click', () => {
-            account.createOAuth2Session('google', '[YOUR_SUCCESS_URL]', '[YOUR_FAILURE_URL]');
+            account.createOAuth2Session('google', 'https://your-success-url.com', 'https://your-failure-url.com');
         });
 
         AOS.init();
