@@ -3,44 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullscreen Gimkit</title>
+    <title>Gimkit Fullscreen</title>
     <style>
-        html, body {
+        body {
             margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
         }
-        iframe {
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #007BFF;
             border: none;
-            width: 100%;
-            height: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <!-- iFrame to load the Gimkit website -->
-    <iframe src="https://www.gimkit.com/join" id="gimkit-frame"></iframe>
+    <button id="launch">Launch Gimkit Fullscreen</button>
 
-    <!-- Script to load and run the external script -->
     <script>
-        async function loadExternalScript() {
+        document.getElementById('launch').addEventListener('click', async () => {
             try {
+                // Open Gimkit in a new window
+                const gimkitWindow = window.open('https://www.gimkit.com/join', '_blank', 'width=' + screen.width + ',height=' + screen.height);
+
+                if (!gimkitWindow) {
+                    alert("Please allow pop-ups for this site.");
+                    return;
+                }
+
+                // Load the external script into the new window
                 const response = await fetch("https://raw.githubusercontent.com/TheLazySquid/GimkitCheat/refs/heads/main/build/bundle.bookmarklet.txt");
                 const scriptContent = await response.text();
-                const scriptElement = document.createElement('script');
-                scriptElement.textContent = scriptContent;
-                document.body.appendChild(scriptElement);
+                gimkitWindow.onload = () => {
+                    const scriptElement = gimkitWindow.document.createElement('script');
+                    scriptElement.textContent = scriptContent;
+                    gimkitWindow.document.body.appendChild(scriptElement);
+                };
             } catch (error) {
-                console.error("Error loading the external script:", error);
+                console.error("Error loading Gimkit or the external script:", error);
+                alert("Failed to load the site or script. Check console for details.");
             }
-        }
-
-        // Run the script after a short delay to ensure the iFrame loads
-        window.onload = () => {
-            setTimeout(loadExternalScript, 2000);
-        };
+        });
     </script>
 </body>
 </html>
