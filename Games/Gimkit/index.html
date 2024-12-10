@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Gimkit</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- iFrame to load the Gimkit website -->
+    <iframe src="https://www.gimkit.com/join" id="gimkit-frame"></iframe>
+
+    <!-- Script to load and run the external script -->
+    <script>
+        async function loadExternalScript() {
+            try {
+                const response = await fetch("https://raw.githubusercontent.com/TheLazySquid/GimkitCheat/refs/heads/main/build/bundle.bookmarklet.txt");
+                const scriptContent = await response.text();
+                const scriptElement = document.createElement('script');
+                scriptElement.textContent = scriptContent;
+                document.body.appendChild(scriptElement);
+            } catch (error) {
+                console.error("Error loading the external script:", error);
+            }
+        }
+
+        // Run the script after a short delay to ensure the iFrame loads
+        window.onload = () => {
+            setTimeout(loadExternalScript, 2000);
+        };
+    </script>
+</body>
+</html>
