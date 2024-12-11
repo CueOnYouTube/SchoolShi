@@ -10,17 +10,15 @@
 </head>
 <body>
     <div id="particles-js"></div>
-    
+
     <header>
-        <h1>Massive Improvements 🛠️</h1>
-        <div id="user-info">
-            <button id="login-button" class="oauth-login">Login with Google</button>
-            <button id="logout-button" class="oauth-login" style="display: none;">Logout</button>
-        </div>
+        <h1>Massive Improvements🛠️</h1>
+        <button id="auth-button" class="oauth-login">Loading...</button>
     </header>
 
     <main>
         <div class="game-grid">
+            <!-- Game Boxes -->
             <a href="Games/Basketballlegends/index.html" class="game-box" data-aos="fade-up">
                 <div class="game-box-content">
                     <h3>BasketBall Legends</h3>
@@ -71,29 +69,9 @@
                     <h3>Stickman Games</h3>
                 </div>
             </a>
-            <a href="Games/Gimkit/index.html" class="game-box" data-aos="fade-up" data-aos-delay="500">
+            <a href="Games/openchatroom/index.html" class="game-box" data-aos="fade-up" data-aos-delay="500">
                 <div class="game-box-content">
-                    <h3>Gimkit With Hacks</h3>
-                </div>
-            </a>
-            <a href="" class="game-box" data-aos="fade-up" data-aos-delay="500">
-                <div class="game-box-content">
-                    <h3>Test</h3>
-                </div>
-            </a>
-            <a href="" class="game-box" data-aos="fade-up" data-aos-delay="500">
-                <div class="game-box-content">
-                    <h3>Test</h3>
-                </div>
-            </a>
-            <a href="" class="game-box" data-aos="fade-up" data-aos-delay="500">
-                <div class="game-box-content">
-                    <h3>Test</h3>
-                </div>
-            </a>
-            <a href="" class="game-box" data-aos="fade-up" data-aos-delay="500">
-                <div class="game-box-content">
-                    <h3>Test</h3>
+                    <h3>ChatRoom</h3>
                 </div>
             </a>
         </div>
@@ -112,52 +90,28 @@
         // Initialize Appwrite SDK
         const sdk = new Appwrite.Client();
         sdk.setEndpoint('https://cloud.appwrite.io/v1') // Appwrite endpoint
-           .setProject('6753569d001c33de4e0f'); // Project ID
+           .setProject('6753569d001c33de4e0f'); // Appwrite project ID
 
         const account = new Appwrite.Account(sdk);
 
-        const loginButton = document.getElementById('login-button');
-        const logoutButton = document.getElementById('logout-button');
-
-        // Check if user is logged in
-        function checkLoginStatus() {
-            account.get().then(
-                (response) => {
-                    // User is logged in
-                    loginButton.style.display = 'none';
-                    logoutButton.style.display = 'block';
-                    document.getElementById('user-info').innerHTML = `
-                        <p>Welcome, ${response.name}!</p>
-                        <button id="logout-button" class="oauth-login">Logout</button>
-                    `;
-                },
-                (error) => {
-                    // User is logged out
-                    loginButton.style.display = 'block';
-                    logoutButton.style.display = 'none';
-                }
-            );
-        }
-
-        // Login with Google OAuth2
-        loginButton.addEventListener('click', () => {
-            account.createOAuth2Session('google');
-        });
-
-        // Logout
-        logoutButton.addEventListener('click', () => {
-            account.deleteSession('current').then(
-                () => {
-                    checkLoginStatus();
-                },
-                (error) => {
-                    console.error('Logout failed:', error);
-                }
-            );
-        });
-
-        // Check login status on page load
-        checkLoginStatus();
+        // Detect login state
+        account.get()
+            .then(() => {
+                // User is logged in
+                document.getElementById('auth-button').textContent = 'Logout';
+                document.getElementById('auth-button').addEventListener('click', () => {
+                    account.deleteSession('current').then(() => {
+                        location.reload(); // Reload page after logout
+                    });
+                });
+            })
+            .catch(() => {
+                // User is not logged in
+                document.getElementById('auth-button').textContent = 'Login with Google';
+                document.getElementById('auth-button').addEventListener('click', () => {
+                    account.createOAuth2Session('google', window.location.href, window.location.href);
+                });
+            });
 
         AOS.init();
     </script>
